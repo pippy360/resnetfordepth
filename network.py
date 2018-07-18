@@ -69,5 +69,5 @@ def inference_resnet_50(input_images):
 
 	return tf.contrib.layers.fully_connected(global_avg_pool, 1000)
 
-
+print inference_resnet_50(tf.zeros([1,64,64,3]))
 
