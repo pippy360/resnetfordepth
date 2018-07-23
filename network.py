@@ -1,6 +1,42 @@
 import numpy as np
 import tensorflow as tf
 
+
+def loadData(filenamespath):
+	tf.WholeFileReader()
+
+
+        filename_queue = tf.train.string_input_producer([csv_file_path], shuffle=True)
+        reader = tf.TextLineReader()
+        _, serialized_example = reader.read(filename_queue)
+        filename, depth_filename = tf.decode_csv(serialized_example, [["path"], ["annotation"]])
+        # input
+        jpg = tf.read_file(filename)
+        image = tf.image.decode_jpeg(jpg, channels=3)
+        image = tf.cast(image, tf.float32)       
+        # target
+        depth_png = tf.read_file(depth_filename)
+        depth = tf.image.decode_png(depth_png, channels=1)
+        depth = tf.cast(depth, tf.float32)
+        depth = tf.div(depth, [255.0])
+        #depth = tf.cast(depth, tf.int64)
+        # resize
+        image = tf.image.resize_images(image, (IMAGE_HEIGHT, IMAGE_WIDTH))
+        depth = tf.image.resize_images(depth, (TARGET_HEIGHT, TARGET_WIDTH))
+        invalid_depth = tf.sign(depth)
+        # generate batch
+        images, depths, invalid_depths = tf.train.batch(
+            [image, depth, invalid_depth],
+            batch_size=self.batch_size,
+            num_threads=4,
+            capacity= 50 + 3 * self.batch_size,
+        )
+        return images, depths, invalid_depths
+
+
+
+
+
 def residualLayer(name, input_data, inputSize, outputSize, isResize, strides=None):
 	with tf.variable_scope(name) as scope:
             if strides == None:
