@@ -2,37 +2,54 @@ import numpy as np
 import tensorflow as tf
 
 
-def loadData(filenamespath):
-	tf.WholeFileReader()
+
+IMAGE_HEIGHT = 100
+IMAGE_WIDTH = 100
+BATCH_SIZE = 8
+TRAIN_FILE = 'training_data.csv'
 
 
+def loadData(csv_file_path, batch_size, imageDim):
         filename_queue = tf.train.string_input_producer([csv_file_path], shuffle=True)
         reader = tf.TextLineReader()
         _, serialized_example = reader.read(filename_queue)
-        filename, depth_filename = tf.decode_csv(serialized_example, [["path"], ["annotation"]])
+        filename, tag = tf.decode_csv(serialized_example, [["path"], ["annotation"]])
         # input
         jpg = tf.read_file(filename)
         image = tf.image.decode_jpeg(jpg, channels=3)
-        image = tf.cast(image, tf.float32)       
-        # target
-        depth_png = tf.read_file(depth_filename)
-        depth = tf.image.decode_png(depth_png, channels=1)
-        depth = tf.cast(depth, tf.float32)
-        depth = tf.div(depth, [255.0])
-        #depth = tf.cast(depth, tf.int64)
+        image = tf.cast(image, tf.float32)
+       
         # resize
-        image = tf.image.resize_images(image, (IMAGE_HEIGHT, IMAGE_WIDTH))
-        depth = tf.image.resize_images(depth, (TARGET_HEIGHT, TARGET_WIDTH))
-        invalid_depth = tf.sign(depth)
+        image = tf.image.resize_images(image, (imageDim['height'], imageDim['width']))
         # generate batch
-        images, depths, invalid_depths = tf.train.batch(
-            [image, depth, invalid_depth],
-            batch_size=self.batch_size,
+        images, tags = tf.train.batch(
+            [image, tag],
+            batch_size=batch_size,
             num_threads=4,
-            capacity= 50 + 3 * self.batch_size,
+            capacity= 50 + 3 * batch_size,
         )
-        return images, depths, invalid_depths
+        return images, tags
 
+
+
+def train():
+	with tf.Graph().as_default():
+		imageDim = { 'height': IMAGE_HEIGHT, 'width': IMAGE_WIDTH }
+		images, tags = loadData(TRAIN_FILE, BATCH_SIZE, imageDim=imageDim)
+		with tf.Session() as sess:
+
+			threads = []
+			coord = tf.train.Coordinator()
+			for qr in tf.get_collection(tf.GraphKeys.QUEUE_RUNNERS):
+				threads.extend(qr.create_threads(sess, coord=coord, daemon=True, start=True))
+
+			images_output, tags_output = sess.run([images, tags])
+			print 'tags:' + str(tags_output)
+
+
+#######################################################################################
+#			network
+#######################################################################################
 
 
 
@@ -105,5 +122,6 @@ def inference_resnet_50(input_images):
 
 	return tf.contrib.layers.fully_connected(global_avg_pool, 1000)
 
-print inference_resnet_50(tf.zeros([1,64,64,3]))
+train()
+
 
