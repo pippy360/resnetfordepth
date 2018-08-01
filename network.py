@@ -1,5 +1,7 @@
 import numpy as np
 import tensorflow as tf
+from PIL import Image
+
 
 
 
@@ -7,7 +9,7 @@ IMAGE_HEIGHT = 100
 IMAGE_WIDTH = 100
 BATCH_SIZE = 8
 TRAIN_FILE = 'training_data.csv'
-
+IMAGENET_CLASSES_PATH = 'imagenet_classes.txt'
 
 def loadData(csv_file_path, batch_size, imageDim):
         filename_queue = tf.train.string_input_producer([csv_file_path], shuffle=True)
@@ -30,10 +32,16 @@ def loadData(csv_file_path, batch_size, imageDim):
         )
         return images, tags
 
-
+def loadTags():
+	tags = []
+	with open(IMAGENET_CLASSES_PATH) as f:
+		for line in f:
+			tags.append(line)
+	return tags
 
 def train():
 	with tf.Graph().as_default():
+		tagsStr = loadTags()
 		imageDim = { 'height': IMAGE_HEIGHT, 'width': IMAGE_WIDTH }
 		images, tags = loadData(TRAIN_FILE, BATCH_SIZE, imageDim=imageDim)
 		with tf.Session() as sess:
@@ -44,6 +52,11 @@ def train():
 				threads.extend(qr.create_threads(sess, coord=coord, daemon=True, start=True))
 
 			images_output, tags_output = sess.run([images, tags])
+			for i, im in enumerate(images_output):
+				pilimg = Image.fromarray(np.uint8(im))
+				image_name = "%05d_org.png" % i
+				print( image_name + "_" + str(tagsStr[i]) )
+				pilimg.save(image_name)
 			print 'tags:' + str(tags_output)
 
 
