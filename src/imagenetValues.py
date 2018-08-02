@@ -18710,4 +18710,5 @@ values = [
 	("n11661372", "yew"),
 	("n11661909", "Old World yew, English yew, Taxus")
 ]
-
+def get_imagenet_values():
+	return values

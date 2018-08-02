@@ -30,11 +30,11 @@ for out in listdir(mypath):
 				if randint(0, 99) < trainingTestingDataSplit:
 					#write to testing file
 					print( 'testing: ' + filepath )
-					testing.write(filepath + ',' + str(count - 1) + '\n')
+					testing.write(filepath + ',' + out + '\n')
 				else:
 					#write to training file 
 					print( 'training: ' + filepath )
-					training.write(filepath + ',' + str(count - 1) + '\n')
+					training.write(filepath + ',' + out + '\n')
 
 
 
