@@ -1,0 +1,498 @@
+>>> resnet50_weights_tf_dim_ordering_tf_kernels.h5
+activation_1
+activation_10
+activation_11
+activation_12
+activation_13
+activation_14
+activation_15
+activation_16
+activation_17
+activation_18
+activation_19
+activation_2
+activation_20
+activation_21
+activation_22
+activation_23
+activation_24
+activation_25
+activation_26
+activation_27
+activation_28
+activation_29
+activation_3
+activation_30
+activation_31
+activation_32
+activation_33
+activation_34
+activation_35
+activation_36
+activation_37
+activation_38
+activation_39
+activation_4
+activation_40
+activation_41
+activation_42
+activation_43
+activation_44
+activation_45
+activation_46
+activation_47
+activation_48
+activation_49
+activation_5
+activation_6
+activation_7
+activation_8
+activation_9
+avg_pool
+bn2a_branch1
+<HDF5 dataset "bn2a_branch1_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2a_branch1_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2a_branch1_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2a_branch1_running_std:0": shape (256,), type "<f4">
+bn2a_branch2a
+<HDF5 dataset "bn2a_branch2a_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2a_branch2a_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2a_branch2a_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2a_branch2a_running_std:0": shape (64,), type "<f4">
+bn2a_branch2b
+<HDF5 dataset "bn2a_branch2b_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2a_branch2b_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2a_branch2b_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2a_branch2b_running_std:0": shape (64,), type "<f4">
+bn2a_branch2c
+<HDF5 dataset "bn2a_branch2c_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2a_branch2c_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2a_branch2c_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2a_branch2c_running_std:0": shape (256,), type "<f4">
+bn2b_branch2a
+<HDF5 dataset "bn2b_branch2a_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2b_branch2a_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2b_branch2a_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2b_branch2a_running_std:0": shape (64,), type "<f4">
+bn2b_branch2b
+<HDF5 dataset "bn2b_branch2b_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2b_branch2b_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2b_branch2b_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2b_branch2b_running_std:0": shape (64,), type "<f4">
+bn2b_branch2c
+<HDF5 dataset "bn2b_branch2c_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2b_branch2c_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2b_branch2c_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2b_branch2c_running_std:0": shape (256,), type "<f4">
+bn2c_branch2a
+<HDF5 dataset "bn2c_branch2a_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2c_branch2a_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2c_branch2a_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2c_branch2a_running_std:0": shape (64,), type "<f4">
+bn2c_branch2b
+<HDF5 dataset "bn2c_branch2b_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2c_branch2b_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2c_branch2b_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn2c_branch2b_running_std:0": shape (64,), type "<f4">
+bn2c_branch2c
+<HDF5 dataset "bn2c_branch2c_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2c_branch2c_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2c_branch2c_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn2c_branch2c_running_std:0": shape (256,), type "<f4">
+bn3a_branch1
+<HDF5 dataset "bn3a_branch1_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3a_branch1_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3a_branch1_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3a_branch1_running_std:0": shape (512,), type "<f4">
+bn3a_branch2a
+<HDF5 dataset "bn3a_branch2a_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3a_branch2a_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3a_branch2a_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3a_branch2a_running_std:0": shape (128,), type "<f4">
+bn3a_branch2b
+<HDF5 dataset "bn3a_branch2b_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3a_branch2b_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3a_branch2b_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3a_branch2b_running_std:0": shape (128,), type "<f4">
+bn3a_branch2c
+<HDF5 dataset "bn3a_branch2c_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3a_branch2c_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3a_branch2c_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3a_branch2c_running_std:0": shape (512,), type "<f4">
+bn3b_branch2a
+<HDF5 dataset "bn3b_branch2a_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3b_branch2a_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3b_branch2a_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3b_branch2a_running_std:0": shape (128,), type "<f4">
+bn3b_branch2b
+<HDF5 dataset "bn3b_branch2b_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3b_branch2b_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3b_branch2b_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3b_branch2b_running_std:0": shape (128,), type "<f4">
+bn3b_branch2c
+<HDF5 dataset "bn3b_branch2c_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3b_branch2c_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3b_branch2c_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3b_branch2c_running_std:0": shape (512,), type "<f4">
+bn3c_branch2a
+<HDF5 dataset "bn3c_branch2a_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3c_branch2a_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3c_branch2a_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3c_branch2a_running_std:0": shape (128,), type "<f4">
+bn3c_branch2b
+<HDF5 dataset "bn3c_branch2b_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3c_branch2b_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3c_branch2b_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3c_branch2b_running_std:0": shape (128,), type "<f4">
+bn3c_branch2c
+<HDF5 dataset "bn3c_branch2c_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3c_branch2c_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3c_branch2c_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3c_branch2c_running_std:0": shape (512,), type "<f4">
+bn3d_branch2a
+<HDF5 dataset "bn3d_branch2a_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3d_branch2a_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3d_branch2a_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3d_branch2a_running_std:0": shape (128,), type "<f4">
+bn3d_branch2b
+<HDF5 dataset "bn3d_branch2b_beta:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3d_branch2b_gamma:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3d_branch2b_running_mean:0": shape (128,), type "<f4">
+<HDF5 dataset "bn3d_branch2b_running_std:0": shape (128,), type "<f4">
+bn3d_branch2c
+<HDF5 dataset "bn3d_branch2c_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3d_branch2c_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3d_branch2c_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn3d_branch2c_running_std:0": shape (512,), type "<f4">
+bn4a_branch1
+<HDF5 dataset "bn4a_branch1_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4a_branch1_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4a_branch1_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4a_branch1_running_std:0": shape (1024,), type "<f4">
+bn4a_branch2a
+<HDF5 dataset "bn4a_branch2a_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4a_branch2a_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4a_branch2a_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4a_branch2a_running_std:0": shape (256,), type "<f4">
+bn4a_branch2b
+<HDF5 dataset "bn4a_branch2b_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4a_branch2b_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4a_branch2b_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4a_branch2b_running_std:0": shape (256,), type "<f4">
+bn4a_branch2c
+<HDF5 dataset "bn4a_branch2c_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4a_branch2c_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4a_branch2c_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4a_branch2c_running_std:0": shape (1024,), type "<f4">
+bn4b_branch2a
+<HDF5 dataset "bn4b_branch2a_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4b_branch2a_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4b_branch2a_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4b_branch2a_running_std:0": shape (256,), type "<f4">
+bn4b_branch2b
+<HDF5 dataset "bn4b_branch2b_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4b_branch2b_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4b_branch2b_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4b_branch2b_running_std:0": shape (256,), type "<f4">
+bn4b_branch2c
+<HDF5 dataset "bn4b_branch2c_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4b_branch2c_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4b_branch2c_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4b_branch2c_running_std:0": shape (1024,), type "<f4">
+bn4c_branch2a
+<HDF5 dataset "bn4c_branch2a_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4c_branch2a_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4c_branch2a_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4c_branch2a_running_std:0": shape (256,), type "<f4">
+bn4c_branch2b
+<HDF5 dataset "bn4c_branch2b_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4c_branch2b_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4c_branch2b_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4c_branch2b_running_std:0": shape (256,), type "<f4">
+bn4c_branch2c
+<HDF5 dataset "bn4c_branch2c_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4c_branch2c_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4c_branch2c_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4c_branch2c_running_std:0": shape (1024,), type "<f4">
+bn4d_branch2a
+<HDF5 dataset "bn4d_branch2a_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4d_branch2a_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4d_branch2a_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4d_branch2a_running_std:0": shape (256,), type "<f4">
+bn4d_branch2b
+<HDF5 dataset "bn4d_branch2b_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4d_branch2b_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4d_branch2b_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4d_branch2b_running_std:0": shape (256,), type "<f4">
+bn4d_branch2c
+<HDF5 dataset "bn4d_branch2c_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4d_branch2c_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4d_branch2c_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4d_branch2c_running_std:0": shape (1024,), type "<f4">
+bn4e_branch2a
+<HDF5 dataset "bn4e_branch2a_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4e_branch2a_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4e_branch2a_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4e_branch2a_running_std:0": shape (256,), type "<f4">
+bn4e_branch2b
+<HDF5 dataset "bn4e_branch2b_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4e_branch2b_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4e_branch2b_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4e_branch2b_running_std:0": shape (256,), type "<f4">
+bn4e_branch2c
+<HDF5 dataset "bn4e_branch2c_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4e_branch2c_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4e_branch2c_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4e_branch2c_running_std:0": shape (1024,), type "<f4">
+bn4f_branch2a
+<HDF5 dataset "bn4f_branch2a_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4f_branch2a_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4f_branch2a_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4f_branch2a_running_std:0": shape (256,), type "<f4">
+bn4f_branch2b
+<HDF5 dataset "bn4f_branch2b_beta:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4f_branch2b_gamma:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4f_branch2b_running_mean:0": shape (256,), type "<f4">
+<HDF5 dataset "bn4f_branch2b_running_std:0": shape (256,), type "<f4">
+bn4f_branch2c
+<HDF5 dataset "bn4f_branch2c_beta:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4f_branch2c_gamma:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4f_branch2c_running_mean:0": shape (1024,), type "<f4">
+<HDF5 dataset "bn4f_branch2c_running_std:0": shape (1024,), type "<f4">
+bn5a_branch1
+<HDF5 dataset "bn5a_branch1_beta:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5a_branch1_gamma:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5a_branch1_running_mean:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5a_branch1_running_std:0": shape (2048,), type "<f4">
+bn5a_branch2a
+<HDF5 dataset "bn5a_branch2a_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5a_branch2a_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5a_branch2a_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5a_branch2a_running_std:0": shape (512,), type "<f4">
+bn5a_branch2b
+<HDF5 dataset "bn5a_branch2b_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5a_branch2b_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5a_branch2b_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5a_branch2b_running_std:0": shape (512,), type "<f4">
+bn5a_branch2c
+<HDF5 dataset "bn5a_branch2c_beta:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5a_branch2c_gamma:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5a_branch2c_running_mean:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5a_branch2c_running_std:0": shape (2048,), type "<f4">
+bn5b_branch2a
+<HDF5 dataset "bn5b_branch2a_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5b_branch2a_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5b_branch2a_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5b_branch2a_running_std:0": shape (512,), type "<f4">
+bn5b_branch2b
+<HDF5 dataset "bn5b_branch2b_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5b_branch2b_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5b_branch2b_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5b_branch2b_running_std:0": shape (512,), type "<f4">
+bn5b_branch2c
+<HDF5 dataset "bn5b_branch2c_beta:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5b_branch2c_gamma:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5b_branch2c_running_mean:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5b_branch2c_running_std:0": shape (2048,), type "<f4">
+bn5c_branch2a
+<HDF5 dataset "bn5c_branch2a_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5c_branch2a_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5c_branch2a_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5c_branch2a_running_std:0": shape (512,), type "<f4">
+bn5c_branch2b
+<HDF5 dataset "bn5c_branch2b_beta:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5c_branch2b_gamma:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5c_branch2b_running_mean:0": shape (512,), type "<f4">
+<HDF5 dataset "bn5c_branch2b_running_std:0": shape (512,), type "<f4">
+bn5c_branch2c
+<HDF5 dataset "bn5c_branch2c_beta:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5c_branch2c_gamma:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5c_branch2c_running_mean:0": shape (2048,), type "<f4">
+<HDF5 dataset "bn5c_branch2c_running_std:0": shape (2048,), type "<f4">
+bn_conv1
+<HDF5 dataset "bn_conv1_beta:0": shape (64,), type "<f4">
+<HDF5 dataset "bn_conv1_gamma:0": shape (64,), type "<f4">
+<HDF5 dataset "bn_conv1_running_mean:0": shape (64,), type "<f4">
+<HDF5 dataset "bn_conv1_running_std:0": shape (64,), type "<f4">
+conv1
+<HDF5 dataset "conv1_W:0": shape (7, 7, 3, 64), type "<f4">
+<HDF5 dataset "conv1_b:0": shape (64,), type "<f4">
+fc1000
+<HDF5 dataset "fc1000_W:0": shape (2048, 1000), type "<f4">
+<HDF5 dataset "fc1000_b:0": shape (1000,), type "<f4">
+flatten_1
+input_1
+maxpooling2d_1
+merge_1
+merge_10
+merge_11
+merge_12
+merge_13
+merge_14
+merge_15
+merge_16
+merge_2
+merge_3
+merge_4
+merge_5
+merge_6
+merge_7
+merge_8
+merge_9
+res2a_branch1
+<HDF5 dataset "res2a_branch1_W:0": shape (1, 1, 64, 256), type "<f4">
+<HDF5 dataset "res2a_branch1_b:0": shape (256,), type "<f4">
+res2a_branch2a
+<HDF5 dataset "res2a_branch2a_W:0": shape (1, 1, 64, 64), type "<f4">
+<HDF5 dataset "res2a_branch2a_b:0": shape (64,), type "<f4">
+res2a_branch2b
+<HDF5 dataset "res2a_branch2b_W:0": shape (3, 3, 64, 64), type "<f4">
+<HDF5 dataset "res2a_branch2b_b:0": shape (64,), type "<f4">
+res2a_branch2c
+<HDF5 dataset "res2a_branch2c_W:0": shape (1, 1, 64, 256), type "<f4">
+<HDF5 dataset "res2a_branch2c_b:0": shape (256,), type "<f4">
+res2b_branch2a
+<HDF5 dataset "res2b_branch2a_W:0": shape (1, 1, 256, 64), type "<f4">
+<HDF5 dataset "res2b_branch2a_b:0": shape (64,), type "<f4">
+res2b_branch2b
+<HDF5 dataset "res2b_branch2b_W:0": shape (3, 3, 64, 64), type "<f4">
+<HDF5 dataset "res2b_branch2b_b:0": shape (64,), type "<f4">
+res2b_branch2c
+<HDF5 dataset "res2b_branch2c_W:0": shape (1, 1, 64, 256), type "<f4">
+<HDF5 dataset "res2b_branch2c_b:0": shape (256,), type "<f4">
+res2c_branch2a
+<HDF5 dataset "res2c_branch2a_W:0": shape (1, 1, 256, 64), type "<f4">
+<HDF5 dataset "res2c_branch2a_b:0": shape (64,), type "<f4">
+res2c_branch2b
+<HDF5 dataset "res2c_branch2b_W:0": shape (3, 3, 64, 64), type "<f4">
+<HDF5 dataset "res2c_branch2b_b:0": shape (64,), type "<f4">
+res2c_branch2c
+<HDF5 dataset "res2c_branch2c_W:0": shape (1, 1, 64, 256), type "<f4">
+<HDF5 dataset "res2c_branch2c_b:0": shape (256,), type "<f4">
+res3a_branch1
+<HDF5 dataset "res3a_branch1_W:0": shape (1, 1, 256, 512), type "<f4">
+<HDF5 dataset "res3a_branch1_b:0": shape (512,), type "<f4">
+res3a_branch2a
+<HDF5 dataset "res3a_branch2a_W:0": shape (1, 1, 256, 128), type "<f4">
+<HDF5 dataset "res3a_branch2a_b:0": shape (128,), type "<f4">
+res3a_branch2b
+<HDF5 dataset "res3a_branch2b_W:0": shape (3, 3, 128, 128), type "<f4">
+<HDF5 dataset "res3a_branch2b_b:0": shape (128,), type "<f4">
+res3a_branch2c
+<HDF5 dataset "res3a_branch2c_W:0": shape (1, 1, 128, 512), type "<f4">
+<HDF5 dataset "res3a_branch2c_b:0": shape (512,), type "<f4">
+res3b_branch2a
+<HDF5 dataset "res3b_branch2a_W:0": shape (1, 1, 512, 128), type "<f4">
+<HDF5 dataset "res3b_branch2a_b:0": shape (128,), type "<f4">
+res3b_branch2b
+<HDF5 dataset "res3b_branch2b_W:0": shape (3, 3, 128, 128), type "<f4">
+<HDF5 dataset "res3b_branch2b_b:0": shape (128,), type "<f4">
+res3b_branch2c
+<HDF5 dataset "res3b_branch2c_W:0": shape (1, 1, 128, 512), type "<f4">
+<HDF5 dataset "res3b_branch2c_b:0": shape (512,), type "<f4">
+res3c_branch2a
+<HDF5 dataset "res3c_branch2a_W:0": shape (1, 1, 512, 128), type "<f4">
+<HDF5 dataset "res3c_branch2a_b:0": shape (128,), type "<f4">
+res3c_branch2b
+<HDF5 dataset "res3c_branch2b_W:0": shape (3, 3, 128, 128), type "<f4">
+<HDF5 dataset "res3c_branch2b_b:0": shape (128,), type "<f4">
+res3c_branch2c
+<HDF5 dataset "res3c_branch2c_W:0": shape (1, 1, 128, 512), type "<f4">
+<HDF5 dataset "res3c_branch2c_b:0": shape (512,), type "<f4">
+res3d_branch2a
+<HDF5 dataset "res3d_branch2a_W:0": shape (1, 1, 512, 128), type "<f4">
+<HDF5 dataset "res3d_branch2a_b:0": shape (128,), type "<f4">
+res3d_branch2b
+<HDF5 dataset "res3d_branch2b_W:0": shape (3, 3, 128, 128), type "<f4">
+<HDF5 dataset "res3d_branch2b_b:0": shape (128,), type "<f4">
+res3d_branch2c
+<HDF5 dataset "res3d_branch2c_W:0": shape (1, 1, 128, 512), type "<f4">
+<HDF5 dataset "res3d_branch2c_b:0": shape (512,), type "<f4">
+res4a_branch1
+<HDF5 dataset "res4a_branch1_W:0": shape (1, 1, 512, 1024), type "<f4">
+<HDF5 dataset "res4a_branch1_b:0": shape (1024,), type "<f4">
+res4a_branch2a
+<HDF5 dataset "res4a_branch2a_W:0": shape (1, 1, 512, 256), type "<f4">
+<HDF5 dataset "res4a_branch2a_b:0": shape (256,), type "<f4">
+res4a_branch2b
+<HDF5 dataset "res4a_branch2b_W:0": shape (3, 3, 256, 256), type "<f4">
+<HDF5 dataset "res4a_branch2b_b:0": shape (256,), type "<f4">
+res4a_branch2c
+<HDF5 dataset "res4a_branch2c_W:0": shape (1, 1, 256, 1024), type "<f4">
+<HDF5 dataset "res4a_branch2c_b:0": shape (1024,), type "<f4">
+res4b_branch2a
+<HDF5 dataset "res4b_branch2a_W:0": shape (1, 1, 1024, 256), type "<f4">
+<HDF5 dataset "res4b_branch2a_b:0": shape (256,), type "<f4">
+res4b_branch2b
+<HDF5 dataset "res4b_branch2b_W:0": shape (3, 3, 256, 256), type "<f4">
+<HDF5 dataset "res4b_branch2b_b:0": shape (256,), type "<f4">
+res4b_branch2c
+<HDF5 dataset "res4b_branch2c_W:0": shape (1, 1, 256, 1024), type "<f4">
+<HDF5 dataset "res4b_branch2c_b:0": shape (1024,), type "<f4">
+res4c_branch2a
+<HDF5 dataset "res4c_branch2a_W:0": shape (1, 1, 1024, 256), type "<f4">
+<HDF5 dataset "res4c_branch2a_b:0": shape (256,), type "<f4">
+res4c_branch2b
+<HDF5 dataset "res4c_branch2b_W:0": shape (3, 3, 256, 256), type "<f4">
+<HDF5 dataset "res4c_branch2b_b:0": shape (256,), type "<f4">
+res4c_branch2c
+<HDF5 dataset "res4c_branch2c_W:0": shape (1, 1, 256, 1024), type "<f4">
+<HDF5 dataset "res4c_branch2c_b:0": shape (1024,), type "<f4">
+res4d_branch2a
+<HDF5 dataset "res4d_branch2a_W:0": shape (1, 1, 1024, 256), type "<f4">
+<HDF5 dataset "res4d_branch2a_b:0": shape (256,), type "<f4">
+res4d_branch2b
+<HDF5 dataset "res4d_branch2b_W:0": shape (3, 3, 256, 256), type "<f4">
+<HDF5 dataset "res4d_branch2b_b:0": shape (256,), type "<f4">
+res4d_branch2c
+<HDF5 dataset "res4d_branch2c_W:0": shape (1, 1, 256, 1024), type "<f4">
+<HDF5 dataset "res4d_branch2c_b:0": shape (1024,), type "<f4">
+res4e_branch2a
+<HDF5 dataset "res4e_branch2a_W:0": shape (1, 1, 1024, 256), type "<f4">
+<HDF5 dataset "res4e_branch2a_b:0": shape (256,), type "<f4">
+res4e_branch2b
+<HDF5 dataset "res4e_branch2b_W:0": shape (3, 3, 256, 256), type "<f4">
+<HDF5 dataset "res4e_branch2b_b:0": shape (256,), type "<f4">
+res4e_branch2c
+<HDF5 dataset "res4e_branch2c_W:0": shape (1, 1, 256, 1024), type "<f4">
+<HDF5 dataset "res4e_branch2c_b:0": shape (1024,), type "<f4">
+res4f_branch2a
+<HDF5 dataset "res4f_branch2a_W:0": shape (1, 1, 1024, 256), type "<f4">
+<HDF5 dataset "res4f_branch2a_b:0": shape (256,), type "<f4">
+res4f_branch2b
+<HDF5 dataset "res4f_branch2b_W:0": shape (3, 3, 256, 256), type "<f4">
+<HDF5 dataset "res4f_branch2b_b:0": shape (256,), type "<f4">
+res4f_branch2c
+<HDF5 dataset "res4f_branch2c_W:0": shape (1, 1, 256, 1024), type "<f4">
+<HDF5 dataset "res4f_branch2c_b:0": shape (1024,), type "<f4">
+res5a_branch1
+<HDF5 dataset "res5a_branch1_W:0": shape (1, 1, 1024, 2048), type "<f4">
+<HDF5 dataset "res5a_branch1_b:0": shape (2048,), type "<f4">
+res5a_branch2a
+<HDF5 dataset "res5a_branch2a_W:0": shape (1, 1, 1024, 512), type "<f4">
+<HDF5 dataset "res5a_branch2a_b:0": shape (512,), type "<f4">
+res5a_branch2b
+<HDF5 dataset "res5a_branch2b_W:0": shape (3, 3, 512, 512), type "<f4">
+<HDF5 dataset "res5a_branch2b_b:0": shape (512,), type "<f4">
+res5a_branch2c
+<HDF5 dataset "res5a_branch2c_W:0": shape (1, 1, 512, 2048), type "<f4">
+<HDF5 dataset "res5a_branch2c_b:0": shape (2048,), type "<f4">
+res5b_branch2a
+<HDF5 dataset "res5b_branch2a_W:0": shape (1, 1, 2048, 512), type "<f4">
+<HDF5 dataset "res5b_branch2a_b:0": shape (512,), type "<f4">
+res5b_branch2b
+<HDF5 dataset "res5b_branch2b_W:0": shape (3, 3, 512, 512), type "<f4">
+<HDF5 dataset "res5b_branch2b_b:0": shape (512,), type "<f4">
+res5b_branch2c
+<HDF5 dataset "res5b_branch2c_W:0": shape (1, 1, 512, 2048), type "<f4">
+<HDF5 dataset "res5b_branch2c_b:0": shape (2048,), type "<f4">
+res5c_branch2a
+<HDF5 dataset "res5c_branch2a_W:0": shape (1, 1, 2048, 512), type "<f4">
+<HDF5 dataset "res5c_branch2a_b:0": shape (512,), type "<f4">
+res5c_branch2b
+<HDF5 dataset "res5c_branch2b_W:0": shape (3, 3, 512, 512), type "<f4">
+<HDF5 dataset "res5c_branch2b_b:0": shape (512,), type "<f4">
+res5c_branch2c
+<HDF5 dataset "res5c_branch2c_W:0": shape (1, 1, 512, 2048), type "<f4">
+<HDF5 dataset "res5c_branch2c_b:0": shape (2048,), type "<f4">
+zeropadding2d_1
