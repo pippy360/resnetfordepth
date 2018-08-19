@@ -2,12 +2,45 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 from imagenetValues import get_imagenet_values
+from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoint_file
+from pprint import pprint
+
+import os, sys, argparse
+import h5py
+from numpy import array
 
 
 IMAGE_HEIGHT = 100
 IMAGE_WIDTH = 100
 BATCH_SIZE = 8
 TRAIN_FILE = 'training_data.csv'
+
+everything = {}
+
+def restore(sess, model):
+	#TODO: handle case when no checkpoint
+
+	# Restore the moving average version of the learned variables for eval.
+	#variable_averages = tf.train.ExponentialMovingAverage(MOVING_AVERAGE_DECAY)
+	#variables_to_restore = variable_averages.variables_to_restore()
+
+	#is there one??
+	model.load_weights(weights_path)
+	ckpt = tf.train.get_checkpoint_state( '../20180601_resnet_v2_imagenet_checkpoint' )
+	#print_tensors_in_checkpoint_file(file_name=ckpt.model_checkpoint_path, tensor_name='', all_tensors=False)
+	if ckpt and ckpt.model_checkpoint_path:
+		saver = tf.train.Saver()
+		# Restores from checkpoint
+		saver.restore(sess, ckpt.model_checkpoint_path)
+		# Assuming model_checkpoint_path looks something like:
+		#   /my-favorite-path/cifar10_train/model.ckpt-0,
+		# extract global_step from it.
+		global_step = ckpt.model_checkpoint_path.split('/')[-1].split('-')[-1]
+
+		print('checkpoint loaded with global_step: ' + str(global_step))
+		return global_step
+	else:
+		return None
 
 def loadData(csv_file_path, batch_size, imageDim):
         filename_queue = tf.train.string_input_producer([csv_file_path], shuffle=True)
@@ -37,13 +70,58 @@ def loadTags():
 		tags[val[0]] = val[1]
 	return tags
 
+def loadAllVariables():
+	res = {}
+	for x in tf.global_variables():
+		res[x.name.replace('/', '_')] = x
+	return res
+
+def convertToList(inputVar):
+	valof = []
+	for vl in inputVar:
+		valof.append(vl)
+	return valof
+
+def loadFromFile():
+	loadedVarList = []
+	loadedFile = h5py.File("resnet50_weights_tf_dim_ordering_tf_kernels.h5", 'r')
+	print loadedFile
+	for tfVar in loadedFile:
+		out1 = loadedFile[str(tfVar)]
+		for subVar in out1:
+			out2 = out1[str(subVar)]
+			for actualVar in subVar[str()]:
+				print str(actualVar)
+				loadedVarList.append(actualVar)
+	
+	convertedVars = {}
+	for toConvert in loadedVarList:
+		convertedVars[str(toConvert)] = convertToList(toConvert)
+	return convertedVars
+
+
 def train():
 	with tf.Graph().as_default():
-		tagsStr = loadTags()
+
 		imageDim = { 'height': IMAGE_HEIGHT, 'width': IMAGE_WIDTH }
 		images, tags = loadData(TRAIN_FILE, BATCH_SIZE, imageDim=imageDim)
-		with tf.Session() as sess:
+		network = inference_resnet_50(images)
 
+		loadedFromFile = loadFromFile()
+		for i in loadedFromFile:
+			print i
+		tfVars = loadAllVariables()
+		assignOps = []
+		for k, v in tfVars.items():
+			assignOps.append( v.assign( loadedFromFile[k] ) )
+
+		with tf.Session() as sess:
+			sess.run(tf.global_variables_initializer())
+			sess.run(assignOps)  # or `assign_op.op.run()`
+			return
+
+		with tf.Session() as sess:
+			restore(sess)
 			threads = []
 			coord = tf.train.Coordinator()
 			for qr in tf.get_collection(tf.GraphKeys.QUEUE_RUNNERS):
@@ -63,41 +141,52 @@ def train():
 #######################################################################################
 
 
+def residualLayer(input_data, stage, block, inputSize, outputSize, isResize, strides=None):
+	if strides == None:
+		if isResize:
+		    strides = (2, 2)
+		else:
+		    strides = (1, 1)
+	conv_name_base = 'res' + str(stage) + block + '_branch'
+	bn_name_base = 'bn' + str(stage) + block + '_branch'
 
+	#conv 1x1 /1
+	conv = input_data
+	conv = tf.layers.conv2d(conv, filters=inputSize, kernel_size=1, strides=strides, padding='SAME', use_bias=False, 
+		name=conv_name_base + '2a')
+	everything[ conv_name_base + '2a' ] = conv
+	conv = tf.layers.batch_normalization(conv, name=bn_name_base + '2a')
+	everything[ bn_name_base + '2a' ] = conv
+	conv = tf.nn.relu(conv)
 
-def residualLayer(name, input_data, inputSize, outputSize, isResize, strides=None):
-	with tf.variable_scope(name) as scope:
-            if strides == None:
-                if isResize:
-                    strides = (2, 2)
-                else:
-                    strides = (1, 1)
+	#conv 3x3 /1
+	conv = tf.layers.conv2d(conv, filters=inputSize, kernel_size=3, padding='SAME', use_bias=False, 
+		name=conv_name_base + '2b')
+	everything[ conv_name_base + '2b' ] = conv
+	conv = tf.layers.batch_normalization(conv, name=bn_name_base + '2b')
+	everything[ bn_name_base + '2b' ] = conv
+	conv = tf.nn.relu(conv)
 
-            #conv 1x1 /1
-            conv = input_data
-            conv = tf.layers.conv2d(conv, filters=inputSize, kernel_size=1, strides=strides, padding='SAME', use_bias=False)
-            conv = tf.layers.batch_normalization(conv)
-            conv = tf.nn.relu(conv)
+	#conv 1x1 /1
+	conv = tf.layers.conv2d(conv, filters=outputSize, kernel_size=1, padding='SAME', use_bias=False,
+		name=conv_name_base + '2c')
+	everything[ conv_name_base + '2c' ] = conv
+	conv = tf.layers.batch_normalization(conv, name=bn_name_base + '2c')
+	everything[ bn_name_base + '2c' ] = conv
+	#NO RELU
 
-            #conv 3x3 /1
-            conv = tf.layers.conv2d(conv, filters=inputSize, kernel_size=3, padding='SAME', use_bias=False)
-            conv = tf.layers.batch_normalization(conv)
-            conv = tf.nn.relu(conv)
+	#residule stuff
+	inputsToAdd = input_data
+	if(isResize):		
+		inputsToAdd = tf.layers.conv2d(inputsToAdd, filters=outputSize, kernel_size=1, strides=strides, 
+			padding='SAME', use_bias=False, name=conv_name_base + '1')
+		everything[ conv_name_base + '1' ] = conv
+		inputsToAdd = tf.layers.batch_normalization(inputsToAdd, name=bn_name_base + '1')
+		everything[ bn_name_base + '1' ] = conv
 
-            #conv 1x1 /1
-            conv = tf.layers.conv2d(conv, filters=outputSize, kernel_size=1, padding='SAME', use_bias=False)
-            conv = tf.layers.batch_normalization(conv)
-            #NO RELU
-            
-            #residule stuff
-            inputsToAdd = input_data
-            if(isResize):		
-                    inputsToAdd = tf.layers.conv2d(inputsToAdd, filters=outputSize, kernel_size=1, strides=strides, padding='SAME', use_bias=False)
-                    inputsToAdd = tf.layers.batch_normalization(inputsToAdd)
-
-            conv = tf.add(conv, inputsToAdd)
-            conv = tf.nn.relu(conv)
-            return conv
+	conv = tf.add(conv, inputsToAdd)
+	conv = tf.nn.relu(conv)
+	return conv
 
 
 def inference_resnet_50(input_images):
@@ -108,30 +197,33 @@ def inference_resnet_50(input_images):
 	#Using biases
 	biases = tf.get_variable('biases1', [64], dtype='float32', trainable=True)
 	conv1_b = tf.nn.bias_add(conv1_a, biases)
-        
+	
 	conv2 = tf.layers.batch_normalization(conv1_b, name='bn_conv1')
 	conv3 = tf.nn.relu(conv2)
 	conv4 = tf.layers.max_pooling2d(conv3, pool_size=3, strides=(2, 2), name='pool1', padding='SAME')
 	
-	conv5 = residualLayer("Res_resize_1_", conv4, inputSize=64, outputSize=256, isResize=True, strides=(1, 1))
-	for i in range(2):
-		conv5 = residualLayer("Res_1_"+str(i), conv5, inputSize=64, outputSize=256, isResize=False)
+	conv5 = residualLayer(conv4, stage=2, block='a', inputSize=64, outputSize=256, isResize=True, strides=(1, 1))
+	conv5 = residualLayer(conv5, stage=2, block='b', inputSize=64, outputSize=256, isResize=False)
+	conv5 = residualLayer(conv5, stage=2, block='c', inputSize=64, outputSize=256, isResize=False)
 
-	conv6 = residualLayer("Res_resize_2_", conv5, inputSize=128, outputSize=512, isResize=True)
-	for i in range(3):
-		conv6 = residualLayer("Res_2_"+str(i), conv6, inputSize=128, outputSize=512, isResize=False)
+	conv6 = residualLayer(conv5, stage=3, block='a', inputSize=128, outputSize=512, isResize=True)
+	conv6 = residualLayer(conv6, stage=3, block='b', inputSize=128, outputSize=512, isResize=False)
+	conv6 = residualLayer(conv6, stage=3, block='c', inputSize=128, outputSize=512, isResize=False)
+	conv6 = residualLayer(conv6, stage=3, block='d', inputSize=128, outputSize=512, isResize=False)
 
-	conv7 = residualLayer("Res_resize_3_", conv6, inputSize=256, outputSize=1024, isResize=True)
-	for i in range(5):
-		conv7 = residualLayer("Res_3_"+str(i), conv7, inputSize=256, outputSize=1024, isResize=False)
+	conv7 = residualLayer(conv6, stage=4, block='a', inputSize=256, outputSize=1024, isResize=True)
+	conv7 = residualLayer(conv7, stage=4, block='b', inputSize=256, outputSize=1024, isResize=False)
+	conv7 = residualLayer(conv7, stage=4, block='c', inputSize=256, outputSize=1024, isResize=False)
+	conv7 = residualLayer(conv7, stage=4, block='d', inputSize=256, outputSize=1024, isResize=False)
+	conv7 = residualLayer(conv7, stage=4, block='e', inputSize=256, outputSize=1024, isResize=False)
+	conv7 = residualLayer(conv7, stage=4, block='f', inputSize=256, outputSize=1024, isResize=False)
 
-	conv8 = residualLayer("Res_resize_4_", conv7, inputSize=512, outputSize=2048, isResize=True)
-	for i in range(2):
-		conv8 = residualLayer("Res_4_"+str(i), conv8, inputSize=512, outputSize=2048, isResize=False)
+	conv8 = residualLayer(conv7, stage=5, block='a', inputSize=512, outputSize=2048, isResize=True)
+	conv8 = residualLayer(conv8, stage=5, block='b', inputSize=512, outputSize=2048, isResize=False)
+	conv8 = residualLayer(conv8, stage=5, block='c', inputSize=512, outputSize=2048, isResize=False)
 
-	global_avg_pool = tf.reduce_mean(conv8, [1,2])
-
-	return tf.contrib.layers.fully_connected(global_avg_pool, 1000)
+	global_avg_pool = tf.reduce_mean(conv8, [1,2], name='avg_pool')
+	return tf.layers.dense(global_avg_pool, units=1000, activation='softmax', name='fc1000')
 
 train()
 
